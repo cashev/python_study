@@ -6,12 +6,22 @@ draw = ImageDraw.Draw(img)
 cx = 128
 cy = 128
 r = 96
-N = 5
+N = 6
 s = 2 * pi / N
-k = N // 2
+k = N // 3
 
-for i in range(N):
+for i in range(N // 2):
   s1 = ((i * k) % N) * s - 0.5 * pi
+  s2 = s1 + s * k
+  x1 = r * cos(s1) + cx
+  y1 = r * sin(s1) + cy
+  x2 = r * cos(s2) + cx
+  y2 = r * sin(s2) + cy
+  draw.line((x1, y1, x2, y2))
+
+for i in range(N // 2):
+  s1 = ((i * k) % N) * s - 0.5 * pi
+  s1 = s1 + pi
   s2 = s1 + s * k
   x1 = r * cos(s1) + cx
   y1 = r * sin(s1) + cy
