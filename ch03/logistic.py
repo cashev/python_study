@@ -26,3 +26,8 @@ def plot(start, end):
   plt.show()
 
 plot(1.0, 3.0)
+
+plot(1.0, 4.0)
+
+plt.ylim([0.335, 0.39])
+plot(3.54, 3.58)
